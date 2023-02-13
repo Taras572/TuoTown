@@ -1,0 +1,152 @@
+<div class="container__block">
+    <form [formGroup]="productForm" (ngSubmit)="editStatus ? saveProduct(): createProduct()">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="row">№</th>
+                    <td colspan="3" class="table_category">Категорії</td>
+                </tr>
+            </thead>
+            <tbody class="table-dark">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Серія:</td>
+                    <td colspan="2"><input formControlName="series" id="series" class="form-control" type="text"
+                            placeholder="Серія:" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Path:</td>
+                    <td colspan="2"><input formControlName="path" id="path" class="form-control" type="text"
+                            placeholder="Path: Eanglish languages!!!" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Призначення:</td>
+                    <td colspan="2"><input formControlName="appointment" id="appointment" class="form-control"
+                            type="text" placeholder="Призначення:" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Довжина: мм.</td>
+                    <td colspan="2"><input formControlName="length" id="length" class="form-control" type="number"
+                            placeholder="Довжина: мм." aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Довжина леза: мм.</td>
+                    <td colspan="2"><input formControlName="blade_length" id="blade_length" class="form-control"
+                            type="number" placeholder="Довжина леза: мм." aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Матеріал леза:</td>
+                    <td colspan="2"><input formControlName="blade_material" id="blade_material" class="form-control"
+                            type="text" placeholder="Матеріал леза:" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Марка стали:</td>
+                    <td colspan="2"><input formControlName="steel_brand" id="steel_brand" class="form-control"
+                            type="text" placeholder="Марка стали:" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Заточка леза:</td>
+                    <td colspan="2"><input formControlName="sharpening_blade" id="sharpening_blade" class="form-control"
+                            type="text" placeholder="Заточка леза:" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Країна-виробник:</td>
+                    <td colspan="2"><input formControlName="producing_country" id="producing_country"
+                            class="form-control" type="text" placeholder="Країна-виробник:"
+                            aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>Категорії:</td>
+                    <td colspan="2">
+                        <select formControlName="category" id="category" class="form-select"
+                            aria-label="Default select example" >
+                            <option [ngValue]="categ" *ngFor="let categ of category, index as i">{{categ.name}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td>Картинка:</td>
+                    <td colspan="2">
+                        <input [(ngModel)]="imgt" type="file" class="form-control" id="image" aria-describedby="image"
+                            aria-label="Upload" (change)="uploadFile($event)" [ngModelOptions]="{standalone: true}">
+                    </td>
+
+                </tr>
+                <tr>
+                    <th scope="row">12</th>
+                    <td>Ціна: ГРН.</td>
+                    <td colspan="2"><input formControlName="price" id="price" class="form-control"
+                            type="number" placeholder="Ціна: ГРН" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <td rowspan="5" colspan="2">
+                        <div class="category__img">
+                            <img [src]="image" alt="">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="configurate_category" colspan="2">Параметри</td>
+                </tr>
+                <tr>
+                    <td>Назва категорії:</td>
+                    <td>rrrrrr</td>
+                </tr>
+                <tr>
+                    <td>Path:</td>
+                    <td>Knive</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="category_confirm_btn">
+                            <button (click)="deleteFile()" [disabled]="imageStatus" type="button"
+                                class="btn btn-outline-danger">Видалити картинку</button>
+                            <button [disabled]="productForm.invalid" type="submit" class="btn btn-outline-success" [textContent]="editStatus ? 'Зберегти' : 'Додати'"></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Серія</th>
+                <th scope="col">Категорія</th>
+                <th scope="col">Ціна</th>
+                <th scope="col">Картинка</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table-dark">
+            <tr *ngFor="let prod of product; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{prod.series}}</td>
+                <td>{{prod.category.name}}</td>
+                <td>{{prod.price}} ГРН.</td>
+                <td>
+                    <img [src]="prod.image" width="80px" alt="">
+                </td>
+                <td class="table_column__btn">
+                    <button type="button" class="btn btn-outline-danger"
+                        (click)="removeProduct(prod.id)">Delete</button>
+                    <button type="button" class="btn btn-outline-warning"
+                    (click)="editProduct(prod)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

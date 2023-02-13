@@ -1,0 +1,67 @@
+<div class="container__block">
+    <div class="container__block_contain">
+        <div class="container__block_contain_title">
+            <h1>КОРЗИНА</h1>
+            <div class="block_contain_btn" [routerLink]="[ '/catalog' ]">
+                <i class="uil uil-arrow-left"></i>
+                <!-- <img src="../../../assets/icon/Arrow1.svg" alt=""> -->
+                <p>К покупкам</p>
+            </div>
+        </div>
+        <div class="container__block_contain_product">
+            <div class="product" *ngFor="let prod of product">
+                <div class="product_block1">
+                    <img [src]="prod.image" alt="">
+                    <p>{{prod.series}}</p>
+                </div>
+                <div class="product_block2">
+                    <div class="product_count">
+                        <p>{{prod.count}}</p>
+                        <i class="uil uil-plus" (click)="cliker(prod, true)"></i>
+                        <i class="uil uil-minus" (click)="cliker(prod, false)"></i>
+                    </div>
+                    <div class="product_price">
+                        <p>{{prod.price * prod.count}} грн.</p>
+                        <i class="uil uil-multiply" (click)="removeProduct(prod)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block__product_price">
+                <div class="product_price_container">
+                    <p>К оплате:</p>
+                    <h3>{{price}} грн.</h3>
+                </div>
+            </div>
+        </div>
+       
+        <div class="block__order">
+            <h3>Для підтвердження звмовлення - введіть ваші данні і ми передзвонимо вам</h3>
+            <div class="block__order_form">
+                <form class="order_form__input" [formGroup]="basketForm">
+                    <div class="order_form__name">
+                        <input formControlName="name" [class.name_form]="name_form" type="text" class="name" id="name" placeholder="Ім'я Фамілія"
+                            autocomplete="off">
+                    </div>
+                    <div class="order_form__phone">
+                        <input formControlName="phone" [class.phone_form]="phone_form" type="text" id="phone"
+                            class="phone" placeholder="+380-__-___-__-__" prefix="+380" mask="00-000-00-00"
+                            autocomplete="off">
+                    </div>
+                    <div class="order_form__email">
+                        <input formControlName="email" [class.email_form]="email_form" type="email" id="email"
+                            class="email" placeholder="Ваша пошта" autocomplete="off">
+                    </div>
+                </form>
+                <div class="block__order_agree">
+                    <p>Нажимая «Выбрать способ доставки», подтверждаю,
+                        что я ознакомлен с условиями <span>Публичного договора оферты</span> и <span>Политикой
+                            конфиденциальности</span>,
+                        а также согласен получать информационную рассылку</p>
+                    <button type="button" class="btn btn-outline-danger effect effect-5"
+                        (click)="createOrder()">ВІДПРАВИТИ ФОРМУ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

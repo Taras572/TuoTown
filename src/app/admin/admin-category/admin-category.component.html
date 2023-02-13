@@ -1,0 +1,93 @@
+<div class="container__block">
+    <form [formGroup]="categoryForm" (ngSubmit)="editStatus ? saveCategory() : createCategory()">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="row">№</th>
+                    <td colspan="3" class="table_category">Категорії</td>
+                </tr>
+            </thead>
+            <tbody class="table-dark">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Назва</td>
+                    <td colspan="2"><input formControlName="name" id="name" class="form-control" type="text"
+                            placeholder="Default input" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Назва англійською</td>
+                    <td colspan="2"><input formControlName="path" id="path" class="form-control" type="text"
+                            placeholder="Default input" aria-label="default input example"></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Картинка</td>
+                    <td colspan="2">
+                        <input [(ngModel)]="imgt" type="file" class="form-control" id="image" aria-describedby="image"
+                            aria-label="Upload" (change)="uploadFile($event)" [ngModelOptions]="{standalone: true}">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="5" colspan="2">
+                        <div class="category__img">
+                            <img [src]="image" alt="">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="configurate_category" colspan="2">Параметри</td>
+                </tr>
+                <tr>
+                    <td>Назва категорії:</td>
+                    <td>toutown</td>
+                </tr>
+                <tr>
+                    <td>Назва англійською</td>
+                    <td>Knive</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="category_confirm_btn">
+                            <button (click)="deleteFile()" [disabled]="imageStatus" type="button"
+                                class="btn btn-outline-danger">Видалити картинку</button>
+                            <button [disabled]="categoryForm.invalid"  type="submit" class="btn btn-outline-success"
+                            [textContent]="editStatus ? 'Зберегти' : 'Додати'"></button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">path</th>
+                <th scope="col">image</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table-dark">
+            <tr *ngFor="let categ of category; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{categ.name}}</td>
+                <td>{{categ.path}}</td>
+                <td>
+                    <img [src]="categ.image" width="80px" alt="">
+                </td>
+                <td class="table_column__btn">
+                    <button type="button" class="btn btn-outline-danger"
+                        (click)="removeCategory(categ.id)">Delete</button>
+                    <button type="button" class="btn btn-outline-warning"
+                    (click)="editCategory(categ)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,117 @@
+<div class="container__block">
+    <div class="container__block__main">
+        <div class="container__block_head">
+            <div class="block__head_inform"></div>
+            <h1 class="main__title">Вийняткова якість <br> без компромісів</h1>
+            <p class="main__text">Ножі «Tuotown» – це головний інструмент <br> поварів та секрет кулінарного мистецтва
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="container__block_content">
+
+    <div class="block__colection_container">
+
+        <div class="block__colection">
+
+            <div class="container__colection_product">
+                <img [src]="product[0].image" alt="">
+            </div>
+
+            <div class="container_colection_product_haracteristic">
+                <ul class="list_info">
+                    <li class="list-group-item">
+                        <h2>Характеристики</h2>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Серія:</p>
+                        <p>{{product[0].series}}</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Призначення:</p>
+                        <p>{{product[0].appointment}}</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Довжина:</p>
+                        <p>{{product[0].length}} мм.</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Довжина леза:</p>
+                        <p>{{product[0].blade_length}} мм.</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Матеріал леза:</p>
+                        <p>{{product[0].blade_material}}</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Марка сталі:</p>
+                        <p>{{product[0].steel_brand}}</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Заточка леза:</p>
+                        <p>{{product[0].sharpening_blade}}</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Країна виробник:</p>
+                        <p>{{product[0].producing_country}}</p>
+                    </li>
+                    <li class="list-group-item list_info_detail">
+                        <p>Ціна:</p>
+                        <p>{{product[0].price}}грн.</p>
+                    </li>
+                </ul>
+                <div class="block_btn__group">
+                    <div class="btn-group me-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-outline-light" (click)="cliker(false)"><i
+                                class="uil uil-minus"></i></button>
+                        <span class="btn btn-outline-light count_product">{{product[0].count}}</span>
+                        <!-- <input type="number" class="btn btn-outline-secondary"> -->
+                        <button type="button" class="btn btn-outline-light" (click)="cliker(true)"><i
+                                class="uil uil-plus"></i></button>
+                    </div>
+                </div>
+                <div class="block_btn">
+                    <button type="button" class="btn btn-outline-light btn_marg effect effect-5"
+                        (click)="addBasket( product[0], $event )">Додати в кошик</button>
+                    <button type="button" class="btn btn-outline-light effect effect-5" [routerLink]="['/basket']">Оформити</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../../../assets/images/IMG_2872-2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/images/IMG_4191-2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/images/IMG_4079-2.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</div>

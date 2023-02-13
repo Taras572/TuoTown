@@ -1,0 +1,58 @@
+<div class="container__block">
+    <div class="container__block_head">
+        <h1 class="catalog__title">Дом и Ножи</h1>
+        <p class="catalog__text">Эксклюзивные технологии на страже чистоты и уюта в вашем доме</p>
+    </div>
+</div>
+
+<div class="container__block_colection">
+    <div class="block__colection_container">
+
+        <div class="colection colection_img threed" *ngFor="let categ of category; index as i"
+            [routerLink]="['/product/', categ.path]">
+            <img class="back_ING" [src]="categ.image">
+            <div class="colection_text">
+                <p class="">{{categ.name}}</p>
+                <img src="../../../assets/icon/Line17.svg" alt="">
+            </div>
+        </div>
+
+        <!-- <div class="colection colection_img_2">
+            <div class="colection_text">
+                <p>Кухонные ножи TUOTOWN</p>
+                <img src="../../../assets/icon/Line17.svg" alt="">
+            </div>
+        </div>
+        
+        <div class="colection colection_img_3">
+            <div class="colection_text">
+                <p>Кухонные ножи QXF</p>
+                <img src="../../../assets/icon/Line17.svg" alt="">
+            </div>
+        </div>
+
+        <div class="colection colection_img_4">
+            <div class="colection_text">
+                <p>Наборы для BBQ</p>
+                <img src="../../../assets/icon/Line17.svg" alt="">
+            </div>
+        </div>
+
+        <div class="colection colection_img_5">
+            <div class="colection_text">
+                <p>Складные ножи TUOTOWN</p>
+                <img src="../../../assets/icon/Line17.svg" alt="">
+            </div>
+        </div>
+
+        <div class="colection colection_img_6">
+            <div class="colection_text">
+                <p>Туристические товары</p>
+                <img src="../../../assets/icon/Line17.svg" alt="">
+            </div>
+        </div> -->
+
+      
+
+    </div>
+</div>

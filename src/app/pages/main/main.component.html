@@ -1,0 +1,125 @@
+<div class="container__block">
+    <div class="container__block__main">
+        <div class="container__block_head">
+            <h1 class="main__title">Виняткова якість <br> без компромісів</h1>
+            <p class="main__text">Ножі «Tuotown» – це головний інструмент <br> поварів та секрет кулінарного мистецтва
+            </p>
+            <button type="button" class="btn btn-outline-danger">ДЕТАЛЬНІШЕ</button>
+        </div>
+    </div>
+</div>
+
+<div class="container__block_content">
+
+    <div class="block__btn_category">
+        <div class="container__btn_category">
+            <img src="../../../assets/icon/knive.svg" alt="">
+            <p>Кухонні ножі</p>
+        </div>
+        <div class="container__btn_category">
+            <img src="../../../assets/icon/knive2.svg" alt="">
+            <p>Складні ножі</p>
+        </div>
+        <div class="container__btn_category">
+            <img src="../../../assets/icon/knive3.svg" alt="">
+            <p>Точилки для ножів</p>
+        </div>
+        <div class="container__btn_category">
+            <img src="../../../assets/icon/knive4.svg" alt="">
+            <p>Аксессуари для кухні</p>
+        </div>
+    </div>
+
+    <div class="block__colection_container">
+        <div class="block__colection">
+
+            <div class="colection">
+                <div class="colection_text">
+                    <p>Ознайомтеся з колекцією ножів TUOTOWN</p>
+                    <img src="../../../assets/icon/Line17.svg" alt="">
+                </div>
+            </div>
+            <div class="container__colection_product" *ngFor="let prod of product" [routerLink]="['/product-details', prod.id]">
+                <div class="colection__btn">
+                    <div class="colection__btn_add" >
+                        <img src="../../../assets/icon/add.svg" alt="" (click)="addBasket(prod, $event)">
+                       
+                    </div>
+                </div>
+                <div class="colection_product hover-effect-cover ramka-5" [routerLink]="['/product-details', prod.id]">
+                    <img [src]="prod.image" alt="">
+                    <div class="effect-to-left">
+                        <p>Детальніше</p>
+                    </div>
+                </div>
+                <h3>{{prod.series}}</h3>
+                <p>{{prod.price}} грн.</p>
+            </div>
+        
+            <div class="container__colection_product">
+                <div class="colection_product colection_insta">
+                    <img src="../../../assets/images/Instacart.png" alt="">
+                </div>
+            </div>
+          <!-- to do in future -->
+           <!--  <div class="colection__text_btn">
+                <h2>Узнавайте первым o новинках и новостях</h2>
+                <div class="colection__btn_email">
+                    <p>Ваш e-mail</p>
+                </div>
+            </div>
+
+            <div class="container__colection_product">
+                <div class="colection__btn">
+                    <div class="colection__btn_add">
+                        <img src="../../../assets/icon/add.svg" alt="">
+                        <img src="../../../assets/icon/basket_add.svg" alt="">
+                    </div>
+                </div>
+                <div class="colection_product">
+                    <img src="../../../assets/images/image14.png" alt="">
+                </div>
+                <h3>Складной нож SQ01-B</h3>
+                <p>850 грн.</p>
+            </div> -->
+
+        </div>
+    </div>
+
+
+    <div class="line"></div>
+
+    <div class="block__colection_container">
+        <div class="container__info">
+            <div class="container__info_img1">
+                <img src="../../../assets/images/Rectangle36.png" alt="">
+            </div>
+            <h2 class="info_text1">"Tuotown" - легендарні ножі,<br> створюють шедеври</h2>
+
+            <p class="info_text2">Компанія «Tuotown» - ексклюзивний представник професійних кухонних ножів,
+                виготовлених найкращими
+                майстрами Східної Азії із застосуванням передового європейського обладнання та сучасних матеріалів.
+                Вони відрізняються ідеальним балансом та фантастичною гостротою. Поєднують у собі вікові традиції та новітні
+                розробки. Також пропонуємо широкий асортимент супутніх товарів.</p>
+
+            <p class="info_text3">Справжня краса ножа - досконала функціональність і візуальна гармонія. Цей
+                предмет з давніх-давен
+                супроводжував людину: від зарі цивілізації до сьогоднішніх днів. Протягом усієї історії людства
+                він був вірним помічником, незамінним інструментом і грізною зброєю. Пропонуємо вироби Hi-end якості
+                за доступними цінами справжнім цінителям японських ножів.</p>
+
+            <p class="info_text4">Відмінною рисою нашого інтернет-магазину є унікальні торгові
+                пропозиції, ексклюзивність
+                продукції, незмінно високу якість та вигідні ціни. Здійснюємо продажі елітних японських кухонних
+                ножів для професіоналів та любителів. У великій асортиментній лінійці представлені вироби
+                для різних потреб і будь-якого бюджету — від столових приладів до шеф-ножів.</p>
+
+            <h2 class="info_text5">Ножі «Tuotown» - це головний інструмент кухарів і секрет кулінарної майстерності</h2>
+
+            <div class="container__info_img2">
+                <img src="../../../assets/images/Rectangle39.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>

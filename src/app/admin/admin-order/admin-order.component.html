@@ -1,0 +1,36 @@
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Пошта</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Заг.Сумма</th>
+            <th scope="col">Назва</th>
+            <th scope="col">К-ть.</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-dark">
+        <tr *ngFor="let orders of order; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{orders.email}}</td>
+            <td>+380{{orders.phone}}</td>
+            <td>{{orders.totalPrice}} грн.</td>
+            <td>
+                <p *ngFor="let item of orders.products">{{item.series}}</p>
+            </td>
+            <td>
+                <p *ngFor="let item of orders.products">{{item.count}} шт.</p>
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger" (click)="removeOrder(orders.id)">Delete</button>
+            </td>
+            <!-- <td class="table_column__btn">
+                <button type="button" class="btn btn-outline-danger"
+                    (click)="removeCategory(categ.id)">Delete</button>
+                <button type="button" class="btn btn-outline-warning"
+                (click)="editCategory(categ)">Edit</button>
+            </td> -->
+        </tr>
+    </tbody>
+</table>

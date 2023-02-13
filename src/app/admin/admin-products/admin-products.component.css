@@ -1,0 +1,33 @@
+.table-dark td, .table-dark th {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+
+.table th, .configurate_category {
+  text-align: center;
+}
+
+.category__img {
+  margin: 0 auto;
+}
+
+.category__img, .category__img img {
+  width: 200px;
+}
+
+.table_category {
+  text-align: center;
+  padding-right: 14%;
+}
+
+.category_confirm_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  margin: 5px;
+}
+
+.table_column__btn {
+  width: 200px;
+}/*# sourceMappingURL=admin-products.component.css.map */
