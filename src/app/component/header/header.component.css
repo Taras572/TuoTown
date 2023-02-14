@@ -1,9 +1,10 @@
 .head__container {
-  background: rgba(33, 33, 33, 0.8);
+  /*  background: rgba(33, 33, 33, 0.8); */
+  background: linear-gradient(13deg, rgba(0, 0, 0, 0.9724264706) 0%, rgba(41, 3, 3, 0.975227591) 34%, rgba(255, 0, 0, 0.8603816527) 50%, rgba(38, 4, 4, 0.9640231092) 66%, rgba(4, 0, 0, 0.9640231092) 100%);
   height: 71px;
   width: 100%;
   position: fixed;
-  z-index: 9;
+  z-index: 800;
 }
 
 .head {
@@ -164,7 +165,8 @@ head h1 {
   width: 444px;
   height: 100vh;
   background-color: black;
-  background-image: url("../../../assets/images/Rectangle47_nav.png");
+  /* background-image: url('../../../assets/images/Rectangle47_nav.png'); */
+  background-image: url("../../../assets/images/stejka.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -179,6 +181,11 @@ head h1 {
   overflow: hidden;
   top: 0;
   left: 0;
+}
+
+.back_modal__darck_color {
+  background-color: rgba(0, 0, 0, 0.62);
+  height: 100%;
 }
 
 .navbar-nav {
@@ -310,11 +317,13 @@ head h1 {
 }
 
 /* effect-5 styles */
-.effect.effect-5, .effect.effect-6 {
+.effect.effect-5,
+.effect.effect-6 {
   transition: all 0.2s linear 0s;
   border: 1px solid #FFFFFF;
 }
-.effect.effect-5:before, .effect.effect-6:before {
+.effect.effect-5:before,
+.effect.effect-6:before {
   content: "\f054";
   font-family: FontAwesome;
   display: flex;
@@ -331,10 +340,12 @@ head h1 {
   transform-origin: left center;
   transition: all 0.2s linear 0s;
 }
-.effect.effect-5:hover, .effect.effect-6:hover {
+.effect.effect-5:hover,
+.effect.effect-6:hover {
   text-indent: 30px;
 }
-.effect.effect-5:hover:before, .effect.effect-6:hover:before {
+.effect.effect-5:hover:before,
+.effect.effect-6:hover:before {
   transform: scale(1, 1);
   text-indent: 0;
 }

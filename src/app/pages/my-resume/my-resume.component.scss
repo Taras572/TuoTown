@@ -60,6 +60,9 @@ ol li{
     display: flex;
     justify-content: space-between;
 }
+.about_me h1{
+    margin: 10px 0;
+}
 /* sidebar */
 .sidebar{
     background-color: #272727;
@@ -74,6 +77,7 @@ ol li{
 .contacts{
     margin-bottom: 1rem;
 }
+
 
 @media (max-width: 1050px) {
     .content{

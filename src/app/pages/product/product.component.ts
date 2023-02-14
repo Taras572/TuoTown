@@ -26,7 +26,9 @@ export class ProductComponent {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
                 const categoryName = event.url.substring(9);
-                this.loadProduct(categoryName as string);
+                if(categoryName){
+                    this.loadProduct(categoryName as string);
+                }
             }
         })
     }
@@ -46,14 +48,15 @@ export class ProductComponent {
         });
     }
 
+    
     addBasket(products: IProduct, e: Event): void {
         this.orderService.addBasket(products,e);
         this.showSuccess(products.series);
     }
 
+
     showSuccess(name:string) {
         this.toastr.success(name,'Добавлено в кошик');
     }
-
 
 }

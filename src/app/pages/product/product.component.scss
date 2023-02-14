@@ -90,6 +90,9 @@
     justify-content: space-between;
     padding: 0 10px 0 6px;
 }
+.colection__btn:hover{
+    border: 1px solid #FFFFFF;
+}
 
 .colection__btn_add img {
     cursor: pointer;
@@ -265,6 +268,7 @@ $border: #272727;
 .ramka-5:hover::before {
     animation: anim-ramka-5 4s linear infinite;
 }
+
 
 @keyframes anim-ramka-5 {
     100% {

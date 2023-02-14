@@ -19,31 +19,38 @@
         <div class="block__back_modal" [class.back_modal]="modal"></div>
 
         <div class="block_modal" [class.modal_slide]="modal" id="exampleModal22" tabindex="-1">
-            <div class="block_modal_arrow" (click)="modal = true; scrollDisable()"></div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/main' ]">Головна</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/catalog' ]">Каталог</a>
-                    <ul class="navbar-nav" style="margin: 0 15px;" *ngFor="let categ of category">
-                        <li class="nav-item">
-                            <a class="nav-link" (click)="modal = true; scrollDisable()"
-                                [routerLink]="['/product/', categ.path]">{{categ.name}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/basket' ]">Кошик</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/my-resume' ]">Моє резюме</a>
+            <div class="back_modal__darck_color">
+                <div class="block_modal_arrow" (click)="modal = true; scrollDisable()"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="modal = true; scrollDisable()"
+                            [routerLink]="[ '/main' ]">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="modal = true; scrollDisable()"
+                            [routerLink]="[ '/catalog' ]">Каталог</a>
+                        <ul class="navbar-nav" style="margin: 0 15px;" *ngFor="let categ of category">
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="modal = true; scrollDisable()"
+                                    [routerLink]="['/product/', categ.path]">{{categ.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="modal = true; scrollDisable()"
+                            [routerLink]="[ '/basket' ]">Кошик</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/my-resume' ]">Моє
+                            резюме</a>
 
-                </li>
-                <li class="nav-item" *ngIf="admin">
-                    <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/admin' ]">Адмін панель</a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="nav-item" *ngIf="admin">
+                        <a class="nav-link" (click)="modal = true; scrollDisable()" [routerLink]="[ '/admin' ]">Адмін
+                            панель</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </div>

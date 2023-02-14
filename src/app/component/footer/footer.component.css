@@ -114,7 +114,8 @@
 .container__block_end {
   height: 88px;
   width: 100%;
-  background-color: #373737;
+  /* background-color: #373737; */
+  background: linear-gradient(13deg, rgba(0, 0, 0, 0.9724264706) 0%, rgba(41, 3, 3, 0.975227591) 34%, rgba(255, 0, 0, 0.8603816527) 50%, rgba(38, 4, 4, 0.9640231092) 66%, rgba(4, 0, 0, 0.9640231092) 100%);
 }
 
 .container__block_end h2 {

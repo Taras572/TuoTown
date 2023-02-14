@@ -88,6 +88,10 @@
   padding: 0 10px 0 6px;
 }
 
+.colection__btn:hover {
+  border: 1px solid #FFFFFF;
+}
+
 .colection__btn_add img {
   cursor: pointer;
 }

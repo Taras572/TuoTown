@@ -143,6 +143,10 @@
   z-index: 10;
 }
 
+.colection__btn:hover {
+  border: 1px solid #FFFFFF;
+}
+
 .colection__btn_add {
   background-color: #C80000;
   height: 37px;

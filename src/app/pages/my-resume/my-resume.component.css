@@ -69,6 +69,10 @@ ol li {
   justify-content: space-between;
 }
 
+.about_me h1 {
+  margin: 10px 0;
+}
+
 /* sidebar */
 .sidebar {
   background-color: #272727;

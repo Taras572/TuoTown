@@ -34,7 +34,7 @@ export class ProductDetailsComponent {
     ngOnInit(): void {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
         //Add 'implements OnInit' to the class.
-
+        this.order();
     }
 
     loadProductByID(id: string) {
@@ -63,6 +63,15 @@ export class ProductDetailsComponent {
 
     showSuccess() {
         this.toastr.success('Добавлено в кошик');
+    }
+
+    order(){
+        let check = JSON.parse(<string>localStorage.getItem('TuoTown'));
+        if (localStorage.getItem('TuoTown')) {
+            if(check.length > 0 ){
+
+            }
+        }
     }
 
 

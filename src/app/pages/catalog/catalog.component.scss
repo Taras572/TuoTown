@@ -82,7 +82,7 @@
     width: 17px;
 }
 
-.colection p {
+.catalog_name{
     font-family: 'Montserrat';
     font-size: 17px;
     font-weight: 600;
@@ -91,7 +91,9 @@
     letter-spacing: 0em;
     text-align: left;
 }
+
 $s-red: #c0b2b023;
+
 .threed:hover {
     box-shadow:
         1px 1px $s-red,
@@ -104,6 +106,7 @@ $s-red: #c0b2b023;
     -webkit-transform: translateX(-7px);
     transform: translateX(-7px);
 }
+
 
 
 

@@ -1,11 +1,11 @@
 <div class="container__block">
     <div class="container__block_contain">
         <div class="container__block_contain_title">
-            <h1>КОРЗИНА</h1>
+            <h1>КОШИК</h1>
             <div class="block_contain_btn" [routerLink]="[ '/catalog' ]">
                 <i class="uil uil-arrow-left"></i>
                 <!-- <img src="../../../assets/icon/Arrow1.svg" alt=""> -->
-                <p>К покупкам</p>
+                <p>До покупок</p>
             </div>
         </div>
         <div class="container__block_contain_product">
@@ -29,7 +29,7 @@
 
             <div class="block__product_price">
                 <div class="product_price_container">
-                    <p>К оплате:</p>
+                    <p>До оплати:</p>
                     <h3>{{price}} грн.</h3>
                 </div>
             </div>
@@ -54,10 +54,10 @@
                     </div>
                 </form>
                 <div class="block__order_agree">
-                    <p>Нажимая «Выбрать способ доставки», подтверждаю,
-                        что я ознакомлен с условиями <span>Публичного договора оферты</span> и <span>Политикой
-                            конфиденциальности</span>,
-                        а также согласен получать информационную рассылку</p>
+                    <p>Натискаючи «Вибрати спосіб доставки», підтверджую,
+                        що я ознайомлений з умовами <span>Публічного договору оферти</span> і <span>Політикою
+                            конфіденційності</span>,
+                            а також згоден отримувати інформаційну розсилку</p>
                     <button type="button" class="btn btn-outline-danger effect effect-5"
                         (click)="createOrder()">ВІДПРАВИТИ ФОРМУ</button>
                 </div>
