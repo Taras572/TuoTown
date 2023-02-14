@@ -127,9 +127,6 @@
   .block__colection_container {
     grid-template-columns: auto;
   }
-  .container__block_colection {
-    width: 320px;
-  }
   .catalog__text {
     min-width: 291px;
     font-size: 14px;
