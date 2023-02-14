@@ -101,7 +101,6 @@ export class HeaderComponent {
         this.userService.sendClickEvent(info);
     }
 
-    /* @HostListener("document:scroll") */
 
     public CloseModal() {
         this.closebutton.nativeElement.click();
@@ -204,7 +203,7 @@ export class HeaderComponent {
                 localStorage.setItem('user', JSON.stringify(user));
                 this.sendcheckForm('good');
                 this.admin = this.userService.getUid();
-                console.log(this.admin);
+                if(this.admin) this.showInfo();
                 // ...
             })
             .catch((error) => {
@@ -311,6 +310,9 @@ export class HeaderComponent {
 
     showSuccess(info: string, infoTo: string) {
         this.toastr.success(info, infoTo);
+    }
+    showInfo() {
+        this.toastr.info("Доступна адмін панель");
     }
 
 
