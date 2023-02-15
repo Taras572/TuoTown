@@ -11,4 +11,10 @@
   margin: 0 auto;
   padding: 50px 0 10px;
   min-height: 50vh;
+}
+
+@media (max-width: 700px) {
+  .container__block_content, .block__colection_container {
+    width: 699px;
+  }
 }/*# sourceMappingURL=admin.component.css.map */
