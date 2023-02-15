@@ -1,3 +1,24 @@
 .table-dark td, .table-dark th{
     background-color: rgba(33, 33, 33, 0.8);;
 }
+
+
+@media (max-width: 540px) {
+    .table{
+        font-size: 13px;
+    }
+    .order_block{
+        display: none;
+    }
+}
+@media (max-width: 450px) {
+    .table>:not(caption)>*>* {
+        padding: 5px;
+    }
+    .btn{
+        font-size: 10px;
+    }
+    .table{
+        font-size: 9px;
+    }
+}

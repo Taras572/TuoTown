@@ -68,11 +68,12 @@
                     <td>Категорії:</td>
                     <td colspan="2">
                         <select formControlName="category" id="category" class="form-select"
-                            aria-label="Default select example" >
+                            aria-label="Default select example">
                             <option [ngValue]="categ" *ngFor="let categ of category, index as i">{{categ.name}}</option>
                         </select>
                     </td>
                 </tr>
+
                 <tr>
                     <th scope="row">11</th>
                     <td>Картинка:</td>
@@ -82,49 +83,44 @@
                     </td>
 
                 </tr>
+
                 <tr>
                     <th scope="row">12</th>
                     <td>Ціна: ГРН.</td>
-                    <td colspan="2"><input formControlName="price" id="price" class="form-control"
-                            type="number" placeholder="Ціна: ГРН" aria-label="default input example"></td>
+                    <td colspan="2"><input formControlName="price" id="price" class="form-control" type="number"
+                            placeholder="Ціна: ГРН" aria-label="default input example"></td>
                 </tr>
-                <tr>
-                    <td rowspan="5" colspan="2">
-                        <div class="category__img">
-                            <img [src]="image" alt="">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="configurate_category" colspan="2">Параметри</td>
-                </tr>
-                <tr>
-                    <td>Назва категорії:</td>
-                    <td>rrrrrr</td>
-                </tr>
-                <tr>
-                    <td>Path:</td>
-                    <td>Knive</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="category_confirm_btn">
-                            <button (click)="deleteFile()" [disabled]="imageStatus" type="button"
-                                class="btn btn-outline-danger">Видалити картинку</button>
-                            <button [disabled]="productForm.invalid" type="submit" class="btn btn-outline-success" [textContent]="editStatus ? 'Зберегти' : 'Додати'"></button>
-                        </div>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
+
+
+        <div class="bottom_block">
+            <div class="category__img">
+                <img [src]="image" alt="">
+            </div>
+            <div class="category_confirm_btn">
+                <button (click)="deleteFile()" [disabled]="imageStatus" type="button"
+                    class="btn btn-outline-danger">Видалити картинку</button>
+
+                <button (click)="initProductForm();image = '' " type="button"
+                    class="btn btn-outline-danger">Відміна</button>
+
+                <button [disabled]="productForm.invalid" type="submit" class="btn btn-outline-success"
+                    [textContent]="editStatus ? 'Зберегти' : 'Додати'"></button>
+            </div>
+        </div>
+
+
     </form>
+
 
     <table class="table">
         <thead class="table-dark">
             <tr>
-                <th scope="col">#</th>
+                <th scope="col" class="number_category">#</th>
                 <th scope="col">Серія</th>
-                <th scope="col">Категорія</th>
+                <th scope="col" class="table_category__product">Категорія</th>
                 <th scope="col">Ціна</th>
                 <th scope="col">Картинка</th>
                 <th></th>
@@ -132,18 +128,17 @@
         </thead>
         <tbody class="table-dark">
             <tr *ngFor="let prod of product; index as i">
-                <th scope="row">{{ i + 1 }}</th>
+                <th scope="row" class="number_category">{{ i + 1 }}</th>
                 <td>{{prod.series}}</td>
-                <td>{{prod.category.name}}</td>
-                <td>{{prod.price}} ГРН.</td>
+                <td class="table_category__product">{{prod.category.name}}</td>
+                <td class="table_price">{{prod.price}} ГРН.</td>
                 <td>
                     <img [src]="prod.image" width="80px" alt="">
                 </td>
                 <td class="table_column__btn">
                     <button type="button" class="btn btn-outline-danger"
                         (click)="removeProduct(prod.id)">Delete</button>
-                    <button type="button" class="btn btn-outline-warning"
-                    (click)="editProduct(prod)">Edit</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="editProduct(prod)">Edit</button>
                 </td>
             </tr>
         </tbody>

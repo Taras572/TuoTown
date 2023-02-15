@@ -25,7 +25,7 @@ export class AdminComponent {
   }
 
   showSuccess() {
-    this.toastr.warning('Адмін панель не адаптується до малих розмірів екрану');
+    this.toastr.warning('Адмін панель не призначена до малих розмірів екрану');
   }
 
 }

@@ -34,7 +34,7 @@ export class AdminProductsComponent {
         private productService: ProductsService,
         private fb: UntypedFormBuilder,
         public storage: Storage,
-        public database: Database,
+        public database: Database
     ) {
 
     }

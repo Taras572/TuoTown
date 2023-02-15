@@ -132,7 +132,7 @@ export class BasketComponent {
             products: this.product,
             totalPrice: this.price
         }
-        if (!this.phone_form && !this.email_form && !this.email_form && this.product.length > 0) {
+        if (!this.phone_form && !this.email_form && !this.name_form && this.product.length > 0) {
             const newPostKey = push(child(ref(this.database), 'order')).key?.substring(1);
             const order = orderBasket;
             order.id = newPostKey;
@@ -155,7 +155,7 @@ export class BasketComponent {
         else if(this.product.length == 0){
             this.showInfo('Кошик пустий', '');
         }
-        if(this.phone_form || this.email_form || this.email_form){
+        if(this.phone_form || this.name_form || this.email_form){
             this.showInfo('Заповніть форму для замовлення', '');
         }
 

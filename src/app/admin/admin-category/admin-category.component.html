@@ -28,37 +28,26 @@
                             aria-label="Upload" (change)="uploadFile($event)" [ngModelOptions]="{standalone: true}">
                     </td>
                 </tr>
-                <tr>
-                    <td rowspan="5" colspan="2">
-                        <div class="category__img">
-                            <img [src]="image" alt="">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="configurate_category" colspan="2">Параметри</td>
-                </tr>
-                <tr>
-                    <td>Назва категорії:</td>
-                    <td>toutown</td>
-                </tr>
-                <tr>
-                    <td>Назва англійською</td>
-                    <td>Knive</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="category_confirm_btn">
-                            <button (click)="deleteFile()" [disabled]="imageStatus" type="button"
-                                class="btn btn-outline-danger">Видалити картинку</button>
-                            <button [disabled]="categoryForm.invalid"  type="submit" class="btn btn-outline-success"
-                            [textContent]="editStatus ? 'Зберегти' : 'Додати'"></button>
-                        </div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
+
+        <div class="bottom_block">
+            <div class="category__img">
+                <img [src]="image" alt="">
+            </div>
+            <div class="category_confirm_btn">
+                <button (click)="deleteFile()" [disabled]="imageStatus" type="button"
+                    class="btn btn-outline-danger">Видалити картинку</button>
+
+                <button (click)="initCategoryForm(); image = '' " type="button"
+                    class="btn btn-outline-danger">Відміна</button>
+
+                <button [disabled]="categoryForm.invalid" type="submit" class="btn btn-outline-success"
+                    [textContent]="editStatus ? 'Зберегти' : 'Додати'"></button>
+            </div>
+        </div>
+
     </form>
 
 
@@ -67,7 +56,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">name</th>
-                <th scope="col">path</th>
+                <th scope="col" class="table_category__product">path</th>
                 <th scope="col">image</th>
                 <th></th>
             </tr>
@@ -76,15 +65,14 @@
             <tr *ngFor="let categ of category; index as i">
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{categ.name}}</td>
-                <td>{{categ.path}}</td>
+                <td class="table_category__product">{{categ.path}}</td>
                 <td>
                     <img [src]="categ.image" width="80px" alt="">
                 </td>
                 <td class="table_column__btn">
                     <button type="button" class="btn btn-outline-danger"
                         (click)="removeCategory(categ.id)">Delete</button>
-                    <button type="button" class="btn btn-outline-warning"
-                    (click)="editCategory(categ)">Edit</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="editCategory(categ)">Edit</button>
                 </td>
             </tr>
         </tbody>

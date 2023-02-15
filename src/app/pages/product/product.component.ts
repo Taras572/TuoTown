@@ -44,6 +44,8 @@ export class ProductComponent {
         onValue(starCountRef, (snapshot) => {
             obj = Object.values(snapshot.val());
             this.product = obj.filter(elem => elem.category.path == URL);
+            console.log(this.product,'bad');
+            if(this.product.length==0) this.product = []; 
             this.category_name = this.product[0].category.name;
         });
     }
